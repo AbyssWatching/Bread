@@ -1,10 +1,14 @@
 const express = require("express")
 const breads = express.Router()
-const Breads = require("../models/bread.js")
+const Bread = require("../models/bread.js")
 
 //index
 breads.get("/", (req, res) => {
-    res.send(Breads)
+    res.render("index",
+    {
+        breads: Bread
+        //res.send(Bread)
+    })
 })
 
 //show
