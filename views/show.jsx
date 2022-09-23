@@ -1,5 +1,5 @@
 const React = require("react")
-const Default = require("./layouts/default")
+const Default = require("./layouts/Default")
 
 function Show ({bread}) {
     console.log(bread.name)

@@ -12,23 +12,24 @@ app.use(express.static("public"))
 app.set("views", __dirname + "/views")
 app.set("view engine", "jsx")
 app.engine("jsx", require("express-react-views").createEngine())
+app.use(express.urlencoded ({extended: true}))
 
 //Routes
 app.get("/", (req, res) =>{
     res.send("Welcome to an Awsome App about breads")
 })
 
-//404 page
-app.get("*", (req,res) => {
-    res.send("404")
-})
+
 
 //Breads
 const breadsController = require("./cotrollers/breads_controller")
 app.use("/breads", breadsController)
 
 
-
+//404 page
+app.get("*", (req,res) => {
+    res.send("404")
+})
 
 //Listen 
 app.listen(PORT, () => {

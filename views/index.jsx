@@ -1,6 +1,6 @@
 const React = require("react")
 const bread = require("../models/bread")
-const Default = require("./layouts/default")
+const Default = require("./layouts/Default")
 
 function Index({breads}){
 
@@ -9,6 +9,10 @@ function Index({breads}){
             <h2>
                 Index Page
             </h2>
+
+            <div className="newButton">
+                <a href="/breads/new"><button>Add a new button</button></a>
+            </div>
             {/*
           <p> I Have {breads[0].name} bread!
             */}
